@@ -10,33 +10,37 @@ import java.util.Scanner;
 public class Juarez_Carlos_cuotas {
     public static void main(String[] args) {
         //banco calcular la cuota
-       //llamamo a Scanner
+        
+       //llamamos a Scanner
        Scanner leer=new Scanner (System.in);
         //prestamo otorgado al cliente
         System.out.println("Ingrese su prestamo otrogado");
         int prestamo= leer.nextInt();
-        //plazo de pago en meses
+        
+//plazo de pago en meses
         System.out.println("Ingrese su plazo de pago");
         int plasoMeses=leer.nextInt();
-       //interes  mensual aplicado al prestamo
+       
+//interes  mensual aplicado al prestamo
         System.out.println("interes mensual aplicado");
         double interes = leer.nextDouble();
         
-        //total a pagar
+       
+//total a pagar
         double prestamoSimple= prestamo*interes*plasoMeses;    
         
-         //comision por cuota
+//comision por cuota
         System.out.println("ingrese la comision por cuota");
         int comision= leer.nextInt();
         
-        //porcentaje de seguro mensual
+//porcentaje de seguro mensual
         System.out.println("ingrese porcentaje de seguro");
         double porcentajeSeguro=leer.nextDouble();
        
-        //couta de pado mensual
+//couta de pago mensual
         double cuotaPagoMensual = prestamoSimple/plasoMeses ;
         
-        //mostrar resultado
+//mostrar resultado
         System.out.println("****CUOTAS MESUALES****"+
                           "\n couta de pago mensual:"+cuotaPagoMensual+"HNL"+
                            "\n Total a pagar:"+prestamoSimple+"HNL" );
