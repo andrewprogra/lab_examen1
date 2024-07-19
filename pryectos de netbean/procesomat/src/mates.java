@@ -12,10 +12,10 @@ public class mates {
         System.out.print("ingresar numero de cuenta");
         Scanner loli=new Scanner(System.in);
         
-        System.out.print("Ingresar numero de cuenta:");
+        System.out.print("Ingresar numero de persona:");
         int cuentaAlumno=loli.nextInt();
         
-        System.out.print("cuenta de alumno: "+cuentaAlumno);
+        System.out.print("cuenta de persona: "+cuentaAlumno);
         
     }
     
