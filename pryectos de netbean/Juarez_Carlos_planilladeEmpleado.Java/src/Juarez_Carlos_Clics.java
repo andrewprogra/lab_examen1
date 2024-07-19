@@ -16,10 +16,12 @@ public class Juarez_Carlos_Clics {
     System.out.println("ingrese la cantidad de clics");
    int clicsTotal=leo.nextInt();
     //precio de clics
-    System.out.println("precio clics1: $0.30");
-    System.out.println("precio clics2: $0.25");
-    System.out.println("precio clics3: $0.80");
+    System.out.println("precio1 : $0.30");
+    System.out.println("precio2: $0.25");
+    System.out.println("precio3 : $0.80");
     
+   //cantida de los clics
+   
     
     
     
