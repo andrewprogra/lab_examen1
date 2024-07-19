@@ -20,7 +20,8 @@ public class Juarez_Carlos_Clics {
     System.out.println("precio2: $0.25");
     System.out.println("precio3 : $0.80");
     
-   //cantida de los clics
+   //cantidad de los clics
+   
    
     
     
