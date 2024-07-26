@@ -122,7 +122,34 @@ public class Juarez_carlos_controll {
          } 
             // opcion 3- Clases
             while(opcion==3){
-            
+                    System.out.println("**Instituto de enseñanza ingles**"+
+                                        "\ningrese dai de la semana en que se encuentra:"+
+                                          "\n1=Lunes"+
+                                          "\n2=Martes"+
+                                          "\n3=Miercoles"+
+                                          "\n4=Jueves"+
+                                          "\n5=Viernes"+
+                                           "\nSeleccion:");
+                    opcion=lea.nextInt();
+              
+            //seleccion de lunes
+                    if(opcion==1){
+                        System.out.println("En este dia se dicta el nivel Inicial"+
+                                            "ingrese fecha actual:");
+                        int fecha=lea.nextInt();
+                        
+                     int dia=0;
+                     String diasemana;
+                     int mes=0;
+               
+                     if(diasemana==lunes||martes||miercoles||jueves||viernes){
+                     }
+                     
+                        
+                        
+                        
+                    }
+                    
             
             }
             
