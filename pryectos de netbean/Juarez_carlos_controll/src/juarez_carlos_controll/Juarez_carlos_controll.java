@@ -142,8 +142,7 @@ public class Juarez_carlos_controll {
                      String diasemana;
                      int mes=0;
                
-                     if(diasemana==lunes||martes||miercoles||jueves||viernes){
-                     }
+                     
                      
                         
                         
