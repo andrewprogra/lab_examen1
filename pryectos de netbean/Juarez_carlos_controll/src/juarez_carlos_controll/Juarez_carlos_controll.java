@@ -46,13 +46,12 @@ public class Juarez_carlos_controll {
                 
      
                 //caso 1- cadena
-                while(opcion==1){
-                System.out.println("ingrese culaquier caracter del teclado:");
-                    String teclado=lea.next();
-                    
-                    
-                    
-                    
+                if(opcion==1){
+                    System.out.println("ingrese culaquier caracter del teclado:");
+                    String cadena=lea.next();
+                 
+                 
+                                                   
           }
     //caso 2 - Notas
      int contador= 0;
@@ -121,7 +120,7 @@ public class Juarez_carlos_controll {
               System.out.println("debes de elegir una opcion, intenta de nuevo.");
          }
          } 
-            
+            // opcion 3- Clases
             while(opcion==3){
             
             
