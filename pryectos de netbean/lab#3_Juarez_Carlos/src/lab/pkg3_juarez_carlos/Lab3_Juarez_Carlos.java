@@ -100,24 +100,31 @@ public class Lab3_Juarez_Carlos {
                 //opcion 2
                 case 2:
 
-                    System.out.print("Ingrese números: ");
-                    String entrada = lea.nextLine();
+        // Solicitar al usuario que ingrese números
+        System.out.print("Ingrese números: ");
+        String entrada = lea.next();
 
-                    int sumaTotal = 0;
+        int sumaTotal = 0;
 
-                    for (int i = 0; i < entrada.length(); i++) {
+        // Recorrer cada carácter en la cadena de entrada
+        for (int i = 0; i < entrada.length(); i++) {
+            // Convertir el carácter a número entero restando '0'
+            int digito = entrada.charAt(i) - '0';
+            sumaTotal += digito;
 
-                        int digito = entrada.charAt(i) - '0';
-                        sumaTotal += digito;
+            // Imprimir el número
+            System.out.print(digito);
+            
+            // Imprimir el signo '+' si no es el último número
+            if (i < entrada.length() - 1) {
+                System.out.print(" + ");
+            }
+        }
 
-                        System.out.print(digito);
+        // Imprimir el resultado de la suma
+        System.out.println(" = " + sumaTotal);
 
-                        if (i < entrada.length() - 1) {
-                            System.out.print(" + ");
-                        }
-                        // Imprimir el resultado de la suma
-                        System.out.println(" = " + sumaTotal);
-                    }
+      
 break;
 
                 //opcion 3
