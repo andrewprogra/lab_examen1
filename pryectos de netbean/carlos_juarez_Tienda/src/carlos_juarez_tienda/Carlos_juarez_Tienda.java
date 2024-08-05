@@ -14,7 +14,7 @@ public class Carlos_juarez_Tienda {
     public static void main(String[] args) {
         // TODO code application logic here
         //llamamos a scanner
-       Scanner lea = new Scanner(System.in);
+        Scanner lea = new Scanner(System.in);
         int dineroCaja = 0;
         int opcionMenu = 0;
         double cantidad = 0;
@@ -57,9 +57,19 @@ public class Carlos_juarez_Tienda {
                     String producto2 = "Avena";
                     String producto3 = "Trigo";
                     String producto4 = "Maíz";
-                    int precio1 = 25, precio2 = 20, precio2C = 22, precio3 = 30, precio4 = 18;
-                    int kilogramoAzucar = 0, kilogramoAvena = 0, kilogramoTrigo = 0, kilogramoMaiz = 0;
-                    int compraAzucar = 0, compraAvena = 0, compraTrigo = 0, compraMaiz = 0;
+                    int precio1 = 25,
+                     precio2 = 20,
+                     precio2C = 22,
+                     precio3 = 30,
+                     precio4 = 18;
+                    int kilogramoAzucar = 0,
+                     kilogramoAvena = 0,
+                     kilogramoTrigo = 0,
+                     kilogramoMaiz = 0;
+                    int compraAzucar = 0,
+                     compraAvena = 0,
+                     compraTrigo = 0,
+                     compraMaiz = 0;
 
                     switch (proveedor) {
                         case 1:
@@ -80,9 +90,9 @@ public class Carlos_juarez_Tienda {
 
                                 if (compraAzucar <= dineroCaja) {
                                     dineroCaja -= compraAzucar;
-                                    System.out.println("Compra realizada. Total: " + compraAzucar + " Lps");
+                                    System.out.println("Compra realizada. ");
                                 } else {
-                                    System.out.println("No hay suficiente dinero en la caja.");
+                                    System.out.println("No se puede pagar compra.");
                                 }
                             } else if (productoA == 2) {
                                 System.out.print("\n¿Cuántos kilogramos de avena desea comprar? ");
@@ -91,34 +101,48 @@ public class Carlos_juarez_Tienda {
 
                                 if (compraAvena <= dineroCaja) {
                                     dineroCaja -= compraAvena;
-                                    System.out.println("Compra realizada. Total: " + compraAvena + " Lps");
+                                    System.out.println("Compra realizada. ");
                                 } else {
                                     System.out.println("No hay suficiente dinero en la caja.");
                                 }
-                            } if (productoA == 3) {
+                            }
+                            if (productoA == 3) {
                                 System.out.print("\n¿Cuántos kilogramos de trigo desea comprar? ");
                                 kilogramoTrigo = lea.nextInt();
                                 compraTrigo = kilogramoTrigo * precio3;
 
                                 if (compraTrigo <= dineroCaja) {
                                     dineroCaja -= compraTrigo;
-                                    System.out.println("Compra realizada. Total: " + compraTrigo + " Lps");
+                                    System.out.println("Compra realizada.");
                                 } else {
-                                    System.out.println("No hay suficiente dinero en la caja.");
+                                    System.out.println("No se puede pagar compra.");
                                 }
-                            } if (productoA == 4) {
+                            }
+                            if (productoA == 4) {
                                 System.out.print("\n¿Cuántos kilogramos de maiz desea comprar? ");
                                 kilogramoMaiz = lea.nextInt();
                                 compraMaiz = kilogramoMaiz * precio4;
 
                                 if (compraMaiz <= dineroCaja) {
                                     dineroCaja -= compraMaiz;
-                                    System.out.println("Compra realizada. Total: " + compraMaiz + " Lps");
+                                    System.out.println("Compra realizada.");
                                 } else {
                                     System.out.println("No hay suficiente dinero en la caja.");
                                 }
+                            } else {
+                                System.out.println("Proveedor no vende dicho producto");
                             }
-                            
+                            System.out.println("***FACTURA****");
+                            System.out.println("producto:");
+                            if (productoA == 1) {
+                                System.out.println("\n" + producto1 + "\nCantidad en kilogramos de:" + producto1 + " : " + kilogramoAzucar + " Kg" + "\nTotal a pagar:" + compraAzucar + " .Lps");
+                            } else if (productoA == 2) {
+                                System.out.println("\n" + producto2 + "\nCantidad en kilogramos de:" + producto2 + " : " + kilogramoAvena + " Kg" + "\nTotal a pagar:" + compraAvena + " .Lps");
+                            } else if (productoA == 3) {
+                                System.out.println("\n" + producto3 + "\nCantidad en kilogramos de:" + producto3 + " : " + kilogramoTrigo + " Kg" + "\nTotal a pagar:" + compraTrigo + " .Lps");
+                            } else {
+                                System.out.println("\n" + producto4 + "\nCantidad en kilogramos de:" + producto4 + " : " + kilogramoMaiz + " Kg" + "\nTotal a pagar:" + compraMaiz + " .Lps");
+                            }
                             break;
 
                         case 2:
@@ -139,9 +163,9 @@ public class Carlos_juarez_Tienda {
                                     dineroCaja -= compraAvena;
                                     System.out.println("Compra realizada. Total: " + compraAvena + " Lps");
                                 } else {
-                                    System.out.println("No hay suficiente dinero en la caja.");
-                                }}
-                            else if (productoB ==3) {
+                                    System.out.println("No se puede pagar compra.");
+                                }
+                            } else if (productoB == 3) {
                                 System.out.print("\n¿Cuántos kilogramos de trigo desea comprar? ");
                                 kilogramoTrigo = lea.nextInt();
                                 compraTrigo = kilogramoTrigo * precio3;
@@ -151,7 +175,17 @@ public class Carlos_juarez_Tienda {
                                     System.out.println("Compra realizada. Total: " + compraTrigo + " Lps");
                                 } else {
                                     System.out.println("No hay suficiente dinero en la caja.");
-                                }}
+                                }
+                            } else {
+                                System.out.println("Proveedor no vende dicho producto");
+                            }
+                            System.out.println("***FACTURA****");
+                            System.out.println("producto:");
+                            if (productoB == 2) {
+                                System.out.println("\n" + producto2 + "\nCantidad en kilogramos de:" + producto2 + " : " + kilogramoAvena + " Kg" + "\nTotal a pagar:" + compraAvena + " .Lps");
+                            } else {
+                                System.out.println("\n" + producto3 + "\nCantidad en kilogramos de:" + producto3 + " : " + kilogramoTrigo + " Kg" + "\nTotal a pagar:" + compraTrigo + " .Lps");
+                            }
                             break;
 
                         case 3:
@@ -159,7 +193,7 @@ public class Carlos_juarez_Tienda {
                             System.out.println("\nProveedor C:");
                             System.out.println("Código    Producto   Precio");
                             System.out.println("2         Avena      22 Lps");
-                           System.out.print("Ingrese el código del producto que desea comprar: ");
+                            System.out.print("Ingrese el código del producto que desea comprar: ");
                             int productoC = lea.nextInt();
 
                             if (productoC == 2) {
@@ -171,8 +205,16 @@ public class Carlos_juarez_Tienda {
                                     dineroCaja -= compraAvena;
                                     System.out.println("Compra realizada. Total: " + compraAvena + " Lps");
                                 } else {
-                                    System.out.println("No hay suficiente dinero en la caja.");
-                                }}
+                                    System.out.println("No se puede pagar compra");
+                                }
+                            } else {
+                                System.out.println("Proveedor no vende dicho producto");
+                            }
+                            System.out.println("producto:");
+                            if (productoC == 2) {
+                                System.out.println("\n" + producto2 + "\nCantidad en kilogramos de:" + producto2 + " : " + kilogramoAvena + " Kg" + "\nTotal a pagar:" + compraAvena + " .Lps");
+                            }
+
                             break;
 
                         default:
@@ -180,8 +222,6 @@ public class Carlos_juarez_Tienda {
                             break;
                     }
                     break;
-
-                // Similar lógica para otras opciones del menú...
 
                 case 6:
                     System.out.println("Saliendo del programa...");
