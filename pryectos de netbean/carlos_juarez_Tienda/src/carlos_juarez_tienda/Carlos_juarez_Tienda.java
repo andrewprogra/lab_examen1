@@ -21,7 +21,7 @@ public class Carlos_juarez_Tienda {
         int decicion = 0;
         int kilogramoAzucar = 0,kilogramoAvena = 0,kilogramoTrigo = 0,kilogramoMaiz = 0;
         int kilogramoAzucarVenta = 0, kilogramoAvenaVenta = 0, kilogramosTrigoVenta = 0, kilogramosMaizVenta = 0;
-        int precioUnitarioAzucar = 30, precioUnitarioAvena = 25, precioUnitarioTrigo = 32, precioUnitarioMaiz = 20;
+        
         String producto1 = "Azúcar";
         String producto2 = "Avena";
         String producto3 = "Trigo";
@@ -60,7 +60,7 @@ public class Carlos_juarez_Tienda {
                     System.out.println("\n1 = Proveedor A\n2 = Proveedor B\n3 = Proveedor C");
                     System.out.print("\nSeleccione: ");
                     int proveedor = lea.nextInt();
-
+//precio que nos brinda el proveedor
                     int precio1 = 25,
                      precio2 = 20,
                      precio2C = 22,
@@ -240,20 +240,25 @@ public class Carlos_juarez_Tienda {
                                 clienteB = 0,
                                 clienteC = 0;;
 
+                                //precios de venta de los productos
+                                int precioAzucar=30,precioAvena=25,precioTrigo=32,precioMaiz=20;
                         System.out.println("Ingresaste a Ventas\nSelecciona el tipo de cliente:\n1=cliente A\n2=cliente B\n3=cliente C\nSeleccione:");
                         int cliente = lea.nextInt();
 
                         switch (cliente) {
 
                             case 1:
-
+                               kilogramoAzucar-=kilogramoAzucarVenta;
+                               kilogramoAvena-=kilogramoAvenaVenta;
+                               kilogramoTrigo-=kilogramosTrigoVenta;
+                               kilogramoMaiz-=kilogramosMaizVenta;
                                 //cliente A
                                 System.out.println("El cliente A solo puede comprar los siguientes productos:"
                                         + "\nCodigo          producto           precio de venta            kilogramos disponibles");
-                                System.out.println("\n1                Azucar                30                         " + kilogramoAzucar);
+                                System.out.println("\n1                Azucar               30                         " + kilogramoAzucar);
                                 System.out.println("\n2                Avena                25                          " + kilogramoAvena);
                                 System.out.println("\n3                Trigo                32                          " + kilogramoTrigo);
-                                System.out.println("\n4                Maiz                  20                         " + kilogramoMaiz);
+                                System.out.println("\n4                Maiz                 20                         " + kilogramoMaiz);
                                 System.out.println("seleccione que producto desea comprar");
                                 clienteA = lea.nextInt();
 
@@ -265,72 +270,54 @@ public class Carlos_juarez_Tienda {
                                     if (kilogramoAzucarVenta >= kilogramoAzucar) {
                                         System.out.println("\nNo puede comprar este producto, no hay suficiente cantidad de kilogramo deseada");
                                     } else {
+                                        kilogramoAzucar-=kilogramoAzucarVenta;
                                         System.out.println("Desea comprar otro producto?\n1=si\n2=no");
                                         decicion = lea.nextInt();
                                         if (decicion == 1) {
 
                                             continue;
-                                        } else if(decicion==2){
-                                            double subtotalAzucar=0, subtotalAvena=0,subtotalTrigo=0,subtotalMaiz=0;
-                                        System.out.println("\n\n***FACTURA***");
-                                            if (clienteA == 1 || clienteB == 1 || clienteC == 1) {
-                                                System.out.println("\nproducto:" + producto1);
-                                            } else if (clienteA == 2 || clienteB == 2 || clienteC == 2) {
-                                                System.out.println("\nproducto:" + producto2);
-                                            } else if (clienteA == 3 || clienteB == 3 || clienteC == 3) {
-                                                System.out.println("\nproducto:" + producto3);
-                                            } else if (clienteA == 4 || clienteB == 4 || clienteC == 4) {
-                                                System.out.println("\nproducto" + producto4);
-                                            }
-
-                                            if (clienteA == 1 || clienteB == 1 || clienteC == 1) {
-                                                System.out.println("\ncantidad kilogramos:" + kilogramoAzucar);
-
-                                            } else if (clienteA == 2 || clienteB == 2 || clienteC == 2) {
-                                                System.out.println("\ncantidad kilogramos:" + kilogramoAvena);
-
-                                            } else if (clienteA == 3 || clienteB == 3 || clienteC == 3) {
-                                                System.out.println("\ncantidad kilogramos:" + kilogramoTrigo);
-                                            } else if (clienteA == 4 || clienteB == 4 || clienteC == 4) {
-                                                System.out.println("\ncantidad kilogramos:" + kilogramoMaiz);
-                                            }
-
-                                            if (clienteA == 1 || clienteB == 1 || clienteC == 1) {
-                                               
-                                                System.out.println("precio unitario:" + precioUnitarioAzucar + " .Lps");
-                                            } else if (clienteA == 2 || clienteB == 2 || clienteC == 2) {
-                                               
-                                                System.out.println("precio unitario:" + precioUnitarioAvena + " .Lps");
-                                            } else if (clienteA == 3 || clienteB == 3 || clienteC == 3) {
-                                              
-                                                System.out.println("precio unitario:" + precioUnitarioTrigo + " .Lps");
-                                            } else if (clienteA == 4 || clienteB == 4 || clienteC == 4) {
-                                              
-                                                System.out.println("precio unitario:" + precioUnitarioMaiz + " .Lps");
-                                            }
-
-                                            if (clienteA == 1 || clienteB == 1 || clienteC == 1) {
-                                                subtotalAzucar = kilogramoAzucarVenta * precioUnitarioAzucar;
-                                                System.out.println("Subtotal: " + subtotalAzucar + " .Lps");
-                                            } else if (clienteA == 2 || clienteB == 2 || clienteC == 2) {
-                                                 subtotalAvena = kilogramoAvenaVenta * precioUnitarioAvena;
-                                                System.out.println("Subtotal: " + subtotalAvena + " .Lps");
-                                            } else if (clienteA == 3 || clienteB == 3 || clienteC == 3) {
-                                                 subtotalTrigo = kilogramosTrigoVenta * precioUnitarioTrigo;
-                                                System.out.println("Subtotal: " + subtotalTrigo + " .Lps");
-                                            } else if (clienteA == 4 || clienteB == 4 || clienteC == 4) {
-                                                 subtotalMaiz = kilogramosMaizVenta * precioUnitarioMaiz;
-                                                System.out.println("Subtotal: " + subtotalMaiz + " .Lps");
+                                        }else if(decicion ==2){
+                                          
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto1);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramoAzucarVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalAzucar=kilogramoAzucarVenta*precioAzucar;
+                                            System.out.println("\nsubtotal:"+subtotalAzucar+" .Lps");
+                                            //descuento
+                                            double descuentoAzucar=subtotalAzucar-0.05;
+                                             double descuentoAzucar2=subtotalAzucar-0.10;
+                                            if(subtotalAzucar>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoAzucar);
+                                                double impuestoAzucar=descuentoAzucar*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAzucar+" .Lps");
+                                                totalPagar=descuentoAzucar+impuestoAzucar;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalAzucar>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoAzucar2);
+                                             double impuestoAzucar2=descuentoAzucar*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAzucar2+" .Lps");
+                                                 totalPagar=descuentoAzucar+impuestoAzucar2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoAzucar=subtotalAzucar*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAzucar+" .Lps");
+                                                 totalPagar=subtotalAzucar+impuestoAzucar;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
                                             }
                                             
-                                            if(subtotalAzucar>=1000  || subtotalAvena>=1000 || subtotalTrigo>=1000 || subtotalMaiz>=0){
                                             
-                                            
-                                            }
-                                     
-                                       
-
-                                    }
+                                        
+                                        }
+                                      
                                     }
 
                                 } else if (clienteA == 2) {
@@ -343,9 +330,49 @@ public class Carlos_juarez_Tienda {
                                         System.out.println("\nDesea compra otro producto?\n1=si\n2=no");
                                         decicion = lea.nextInt();
                                     }
-                                    if (decicion == 2) {
+                                    if (decicion == 1) {
                                         continue;
-                                    }
+                                    }else if(decicion ==2){
+                                            double subtotalAcumulado=0;
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto2);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramoAvenaVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalAvena=kilogramoAvenaVenta*precioAvena;
+                                            System.out.println("\nsubtotal:"+subtotalAvena+" .Lps");
+                                            //descuento
+                                            double descuentoAvena=subtotalAvena-0.05;
+                                             double descuentoAvena2=subtotalAvena-0.10;
+                                            if(subtotalAvena>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoAvena);
+                                                double impuestoAvena=descuentoAvena*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAvena+" .Lps");
+                                                totalPagar=descuentoAvena+impuestoAvena;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalAvena>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoAvena2);
+                                             double impuestoAvena2=descuentoAvena*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAvena2+" .Lps");
+                                                 totalPagar=descuentoAvena+impuestoAvena2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoAvena=subtotalAvena*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAvena+" .Lps");
+                                                 totalPagar=subtotalAvena+impuestoAvena;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
+                                        }
                                 } else if (clienteA == 3) {
                                     System.out.println("\ncuantos kilogramos de Trigo desea comprar");
                                     kilogramosTrigoVenta = lea.nextInt();
@@ -355,8 +382,48 @@ public class Carlos_juarez_Tienda {
                                     } else {
                                         System.out.println("\nDesea comprar otro producto?\n1=si\n2=no");
                                         decicion = lea.nextInt();
-                                        if (decicion == 2) {
+                                        if (decicion == 1) {
                                             continue;
+                                        }else if(decicion ==2){
+                                            double subtotalAcumulado=0;
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto3);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramosTrigoVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalTrigo=kilogramosTrigoVenta*precioTrigo;
+                                            System.out.println("\nsubtotal:"+subtotalTrigo+" .Lps");
+                                            //descuento
+                                            double descuentoTrigo=subtotalTrigo-0.05;
+                                             double descuentoTrigo2=subtotalTrigo-0.10;
+                                            if(subtotalTrigo>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoTrigo);
+                                                double impuestoTrigo=descuentoTrigo*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoTrigo+" .Lps");
+                                                totalPagar=descuentoTrigo+impuestoTrigo;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalTrigo>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoTrigo2);
+                                             double impuestoTrigo2=descuentoTrigo*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoTrigo2+" .Lps");
+                                                 totalPagar=descuentoTrigo+impuestoTrigo2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoTrigo=subtotalTrigo*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoTrigo+" .Lps");
+                                                 totalPagar=subtotalTrigo+impuestoTrigo;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
                                         }
                                     }
                                 } else if (clienteA == 4) {
@@ -368,22 +435,63 @@ public class Carlos_juarez_Tienda {
                                     } else {
                                         System.out.println("\nDesea comprar otro producto?\n1=si\n2=no");
                                         decicion = lea.nextInt();
-                                        if (decicion == 2) {
+                                        if (decicion == 1) {
                                             continue;
-                                        } else if (decicion == 2) {
-
-                                            System.out.println("\n\n***FACTURA***");
+                                        } else if(decicion ==2){
+                                            double subtotalAcumulado=0;
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto4);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramosMaizVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalMaiz=kilogramosMaizVenta*precioMaiz;
+                                            System.out.println("\nsubtotal:"+subtotalMaiz+" .Lps");
+                                            //descuento
+                                            double descuentoMaiz=subtotalMaiz-0.05;
+                                             double descuentoMaiz2=subtotalMaiz-0.10;
+                                            if(subtotalMaiz>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoMaiz);
+                                                double impuestoMaiz=descuentoMaiz*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoMaiz+" .Lps");
+                                                totalPagar=descuentoMaiz+impuestoMaiz;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalMaiz>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoMaiz2);
+                                             double impuestoMaiz2=descuentoMaiz*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoMaiz2+" .Lps");
+                                                 totalPagar=descuentoMaiz+impuestoMaiz2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoMaiz=subtotalMaiz*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoMaiz+" .Lps");
+                                                 totalPagar=subtotalMaiz+impuestoMaiz;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
                                         }
                                     }
                                 } else {
-                                    System.out.println("NO PUEDE COMPRAR DICHO PRODUCTO");
+                                    System.out.println("\nNO PUEDE COMPRAR DICHO PRODUCTO");
                                     break;
                                 }
-
+                        break;
                             case 2:
                                 //cliente B
+                                kilogramoAzucar-=kilogramoAzucarVenta;
+                               kilogramoAvena-=kilogramoAvenaVenta;
+                               kilogramoTrigo-=kilogramosTrigoVenta;
+                               
                                 System.out.println("El cliente B solo puede comprar los siguientes productos:"
-                                        + "\nCodigo          producto           precio de venta            kilogramos disponibles");
+                                                + "\nCodigo          producto           precio de venta            kilogramos disponibles");
                                 System.out.println("\n1                Azucar                30                         " + kilogramoAzucar);
                                 System.out.println("\n2                Avena                25                          " + kilogramoAvena);
                                 System.out.println("\n3                Trigo                32                          " + kilogramoTrigo);
@@ -402,7 +510,47 @@ public class Carlos_juarez_Tienda {
                                         decicion = lea.nextInt();
                                         if (decicion == 2) {
 
-                                            break;
+                                           continue;
+                                        }else if(decicion ==2){
+                                          
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto1);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramoAzucarVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalAzucar=kilogramoAzucarVenta*precioAzucar;
+                                            System.out.println("\nsubtotal:"+subtotalAzucar+" .Lps");
+                                            //descuento
+                                            double descuentoAzucar=subtotalAzucar-0.05;
+                                             double descuentoAzucar2=subtotalAzucar-0.10;
+                                            if(subtotalAzucar>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoAzucar);
+                                                double impuestoAzucar=descuentoAzucar*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAzucar+" .Lps");
+                                                totalPagar=descuentoAzucar+impuestoAzucar;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalAzucar>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoAzucar2);
+                                             double impuestoAzucar2=descuentoAzucar*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAzucar2+" .Lps");
+                                                 totalPagar=descuentoAzucar+impuestoAzucar2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoAzucar=subtotalAzucar*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAzucar+" .Lps");
+                                                 totalPagar=subtotalAzucar+impuestoAzucar;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
                                         }
                                     }
 
@@ -417,8 +565,48 @@ public class Carlos_juarez_Tienda {
                                         decicion = lea.nextInt();
                                     }
                                     if (decicion == 2) {
-                                        break;
-                                    }
+                                        continue;
+                                    }else if(decicion ==2){
+                                            double subtotalAcumulado=0;
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto2);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramoAvenaVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalAvena=kilogramoAvenaVenta*precioAvena;
+                                            System.out.println("\nsubtotal:"+subtotalAvena+" .Lps");
+                                            //descuento
+                                            double descuentoAvena=subtotalAvena-0.05;
+                                             double descuentoAvena2=subtotalAvena-0.10;
+                                            if(subtotalAvena>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoAvena);
+                                                double impuestoAvena=descuentoAvena*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAvena+" .Lps");
+                                                totalPagar=descuentoAvena+impuestoAvena;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalAvena>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoAvena2);
+                                             double impuestoAvena2=descuentoAvena*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAvena2+" .Lps");
+                                                 totalPagar=descuentoAvena+impuestoAvena2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoAvena=subtotalAvena*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoAvena+" .Lps");
+                                                 totalPagar=subtotalAvena+impuestoAvena;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
+                                        }
                                 } else if (clienteB == 3) {
                                     System.out.println("\ncuantos kilogramos de Trigo desea comprar");
                                     kilogramosTrigoVenta = lea.nextInt();
@@ -429,16 +617,57 @@ public class Carlos_juarez_Tienda {
                                         System.out.println("\nDesea comprar otro producto?\n1=si\n2=no");
                                         decicion = lea.nextInt();
                                         if (decicion == 2) {
-                                            break;
+                                            continue;
+                                        }else if(decicion ==2){
+                                            double subtotalAcumulado=0;
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto3);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramosTrigoVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalTrigo=kilogramosTrigoVenta*precioTrigo;
+                                            System.out.println("\nsubtotal:"+subtotalTrigo+" .Lps");
+                                            //descuento
+                                            double descuentoTrigo=subtotalTrigo-0.05;
+                                             double descuentoTrigo2=subtotalTrigo-0.10;
+                                            if(subtotalTrigo>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoTrigo);
+                                                double impuestoTrigo=descuentoTrigo*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoTrigo+" .Lps");
+                                                totalPagar=descuentoTrigo+impuestoTrigo;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalTrigo>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoTrigo2);
+                                             double impuestoTrigo2=descuentoTrigo*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoTrigo2+" .Lps");
+                                                 totalPagar=descuentoTrigo+impuestoTrigo2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoTrigo=subtotalTrigo*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoTrigo+" .Lps");
+                                                 totalPagar=subtotalTrigo+impuestoTrigo;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
                                         }
                                     }
                                 } else {
                                     System.out.println("NO PUEDE COMPRAR DICHO PRODUCTO");
                                     break;
                                 }
-
+                                break;
                             case 3:
 
+                               kilogramoMaiz-=kilogramosMaizVenta;
                                 System.out.println("El cliente C solo puede comprar los siguientes productos:"
                                         + "\nCodigo          producto           precio de venta            kilogramos disponibles");
                                 System.out.println("\n4                Maiz                  20                         " + kilogramoMaiz);
@@ -455,7 +684,47 @@ public class Carlos_juarez_Tienda {
                                         System.out.println("\nDesea comprar otro producto?\n1=si\n2=no");
                                         decicion = lea.nextInt();
                                         if (decicion == 1) {
-                                            break;
+                                            continue;
+                                        }else if(decicion ==2){
+                                            double subtotalAcumulado=0;
+                                            double totalPagar=0;
+                                            System.out.println("\n\n************************************************");
+                                            System.out.println("\n***FACTURA***");
+                                            System.out.println("\nProducto"+producto4);
+                                            System.out.println("\nCantidad de kilogramos:"+kilogramosMaizVenta+" kg");
+                                            System.out.println("\nprecio Unitario: 30.Lps");
+                                            double subtotalMaiz=kilogramosMaizVenta*precioMaiz;
+                                            System.out.println("\nsubtotal:"+subtotalMaiz+" .Lps");
+                                            //descuento
+                                            double descuentoMaiz=subtotalMaiz-0.05;
+                                             double descuentoMaiz2=subtotalMaiz-0.10;
+                                            if(subtotalMaiz>=1000){
+                                            
+                                                System.out.println("\nAplica Descuento del 5%\nDescuento:"+descuentoMaiz);
+                                                double impuestoMaiz=descuentoMaiz*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoMaiz+" .Lps");
+                                                totalPagar=descuentoMaiz+impuestoMaiz;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }else if(subtotalMaiz>5000){
+                                          
+                                              System.out.println("\nAplica Descuento del 10%\nDescuento:"+descuentoMaiz2);
+                                             double impuestoMaiz2=descuentoMaiz*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoMaiz2+" .Lps");
+                                                 totalPagar=descuentoMaiz+impuestoMaiz2;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("---------------------------------------------------------------------");
+                                            }else{
+                                                System.out.println("No aplica descuento");
+                                                double impuestoMaiz=subtotalMaiz*0.07;
+                                                System.out.println("\nimpuesto(7)%:"+impuestoMaiz+" .Lps");
+                                                 totalPagar=subtotalMaiz+impuestoMaiz;
+                                                System.out.println("Total a pagar:"+totalPagar+" .Lps");
+                                                System.out.println("-------------------------------------------------------------------");
+                                            }
+                                            
+                                            
+                                        
                                         }
                                         
         
@@ -466,6 +735,9 @@ public class Carlos_juarez_Tienda {
                                 }
 
                                 break;
+                       
+                        //Reporte
+                            case 4:
                         }
 
                     } else {
