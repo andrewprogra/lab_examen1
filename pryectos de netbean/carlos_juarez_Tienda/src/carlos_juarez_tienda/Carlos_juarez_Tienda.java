@@ -16,7 +16,7 @@ public class Carlos_juarez_Tienda {
         // TODO code application logic here
         //llamamos a scanner
         Scanner lea = new Scanner(System.in);
-        int dineroCaja = 0, opcionMenu = 0, decicion = 0, cantidadkg = 0, kgVenta = 0, totalventa = 0, totalCompras = 0, totalVentas = 0, kgAzucar = 0, kgAvena = 0, kgTrigo = 0, kgMaiz = 0, numeroCompras = 0, numeroVentas = 0;
+        int dineroCaja = 0, opcionMenu = 0, decicion = 0,TotaldeCompras=0,TotaldeVentas=0, cantidadkg = 0, kgVenta = 0, totalventa = 0, totalCompras = 0, totalVentas = 0, kgAzucar = 0, kgAvena = 0, kgTrigo = 0, kgMaiz = 0, numeroCompras = 0, numeroVentas = 0;
 
         double cantidad = 0;
 
@@ -26,6 +26,7 @@ public class Carlos_juarez_Tienda {
 
         String productoEstrella = "";
 
+        
         boolean cajaAbierta = false;
         String facturaDetalles = "";
         do {
@@ -227,6 +228,7 @@ public class Carlos_juarez_Tienda {
                                         cantidadkg = kgMaiz;
                                     }
 
+                                    
                                     System.out.println("\n*******************************");
                                     System.out.println("*         Factura             *");
                                     System.out.println("*******************************");
@@ -381,14 +383,15 @@ public class Carlos_juarez_Tienda {
                                     System.out.println("**************************************");
                                     dineroCaja -= compraTotal;
                                     System.out.println("caja cuenta con:" + dineroCaja + " .Lps");
-
+                                        
+                                   
                                     break;
-
+                                  
                                 default:
                                     System.out.println("Proveedor no valido.");
                                     break;
                             }
-
+                            TotaldeCompras+=(cantidadkg*preciokg);
                         } catch (InputMismatchException ex) {
                             System.out.println("Erro,no puede ingresar letras");
                             lea.next(); // Limpia el buffer del scanner
@@ -462,7 +465,7 @@ public class Carlos_juarez_Tienda {
                                                     System.out.print("\nCuantos kilogramos de azucar desea comprar? ");
 
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgAzucar < cantidadComprada || kgAzucar < 0) {
+                                                    if (cantidadComprada>kgAzucar || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidada de azucar,solo contamos con:" + kgAzucar + "de azucar");
                                                     } else {
                                                         kgAzucar -= cantidadComprada;
@@ -480,7 +483,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Avena";
                                                     System.out.print("\nCuantos kilogramos de avena desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgAvena < cantidadComprada || kgAvena < 0) {
+                                                    if (cantidadComprada>kgAvena || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgAvena + "de avena");
                                                     } else {
                                                         kgAvena -= cantidadComprada;
@@ -498,7 +501,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Trigo";
                                                     System.out.print("\nCuantos kilogramos de trigo desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgTrigo < cantidadComprada || kgTrigo < 0) {
+                                                    if (cantidadComprada>kgTrigo || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgTrigo + "de trigo");
                                                     } else {
                                                         kgTrigo -= cantidadComprada;
@@ -516,7 +519,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Maiz";
                                                     System.out.print("\nCuantos kilogramos de maiz desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (cantidadComprada>kgMaiz || kgMaiz < 0) {
+                                                    if (cantidadComprada>kgMaiz || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgMaiz + "de  maiz");
                                                     } else {
                                                         kgMaiz -= cantidadComprada;
@@ -539,10 +542,10 @@ public class Carlos_juarez_Tienda {
                                             } else if (subtotal > 5000) {
                                                 descuento = subtotal * 0.10;
                                             } else {
-                                                System.out.println("no aplica para descuento");
+                                                
                                                 descuento = 0;
                                             }
-                                           
+                                         
                                             subtotalConDescuento = subtotal - descuento;
                                             impuesto = subtotalConDescuento * 0.07;
                                             totalPagar = subtotalConDescuento + impuesto;
@@ -616,7 +619,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Azucar";
                                                     System.out.print("\nCuantos kilogramos de azucar desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgAzucar < cantidadComprada || kgAzucar < 0) {
+                                                    if (cantidadComprada>kgAzucar || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgAzucar + "de azucar");
                                                     } else {
                                                         kgAzucar -= cantidadComprada;
@@ -634,7 +637,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Avena";
                                                     System.out.print("\nCuantos kilogramos de avena desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgAvena < cantidadComprada || kgAvena < 0) {
+                                                    if (cantidadComprada>kgAvena|| cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgAvena + "de  avena");
                                                     } else {
                                                         kgAvena -= cantidadComprada;
@@ -652,7 +655,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Trigo";
                                                     System.out.print("\nCuantos kilogramos de trigo desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgTrigo < cantidadComprada || kgTrigo < 0) {
+                                                    if (cantidadComprada>kgTrigo || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgTrigo + "de trigo");
                                                     } else {
                                                         kgTrigo -= cantidadComprada;
@@ -749,7 +752,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Maiz";
                                                     System.out.print("\nCuantos kilogramos de maiz desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
-                                                    if (kgMaiz < cantidadComprada || kgMaiz < 0) {
+                                                    if (cantidadComprada>kgMaiz || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgMaiz + "de  maiz");
                                                     } else {
                                                         kgMaiz -= cantidadComprada;
@@ -818,6 +821,7 @@ public class Carlos_juarez_Tienda {
 
                                     break;
                             }
+                           TotaldeVentas+=(cantidadComprada*precio);
                         } catch (InputMismatchException ex) {
                             System.out.println("Error, no permitimos ingresar letras");
                             lea.next(); // Limpia el buffer del scanner
@@ -832,10 +836,10 @@ public class Carlos_juarez_Tienda {
 
                         // Ejemplo de actualización durante una venta
                         kgAzucarVendido += cantidadComprada; // actualiza para el producto específico
-                        numeroVentas++;
-                        volumenVentas += subTotalDes;
+                       
+                       
                         totalCaja += totalFinal;
-                        margenGanancia += (subTotalDes - cantidadComprada); // supongamos que costoCompra es el costo de adquirir el producto
+                        margenGanancia += (TotaldeVentas-TotaldeCompras); // supongamos que costoCompra es el costo de adquirir el producto
 
 // Condicional para determinar la venta con mayor ganancia
                         if (subTotalDes > ventaMayorGanancia) {
@@ -848,11 +852,7 @@ public class Carlos_juarez_Tienda {
                             cantidadProductoEstrella = kgAzucarVendido;
                         }
 // Repetir esta lógica para los demás productos
-                        kgAvenaVendido += cantidadComprada; // actualiza para el producto específico
-                        numeroVentas++;
-                        volumenVentas += subTotalDes;
-                        totalCaja += totalFinal;
-                        margenGanancia += (subTotalDes - cantidadComprada);
+                       
 
                         if (subTotalDes > ventaMayorGanancia) {
                             ventaMayorGanancia = subTotalDes;
@@ -864,11 +864,7 @@ public class Carlos_juarez_Tienda {
                             cantidadProductoEstrella = kgAvenaVendido;
                         }
 
-                        kgTrigoVendido += cantidadComprada; // actualiza para el producto específico
-                        numeroVentas++;
-                        volumenVentas += subTotalDes;
-                        totalCaja += totalFinal;
-                        margenGanancia += (subTotalDes - cantidadComprada);
+                       
 
                         if (subTotalDes > ventaMayorGanancia) {
                             ventaMayorGanancia = subTotalDes;
@@ -880,12 +876,7 @@ public class Carlos_juarez_Tienda {
                             cantidadProductoEstrella = kgTrigoVendido;
                         }
 
-                        kgMaizVendido += cantidadComprada; // actualiza para el producto específico
-                        numeroVentas++;
-                        volumenVentas += subTotalDes;
-                        totalCaja += totalFinal;
-                        margenGanancia += (subTotalDes - cantidadComprada);
-
+                       
                         if (subTotalDes > ventaMayorGanancia) {
                             ventaMayorGanancia = subTotalDes;
                         }
@@ -897,7 +888,10 @@ public class Carlos_juarez_Tienda {
                         }
 
 // Ejemplo de cálculo para valor medio
+                        volumenCompras=TotaldeCompras;
+                        volumenVentas=TotaldeVentas;
                         valorMedioVenta = volumenVentas / numeroVentas;
+                        valorMedioCompra=(volumenCompras / numeroCompras);
 
 // En la sección de reportes:
                         System.out.println("\n*** Reporte del Día ***");
@@ -907,7 +901,7 @@ public class Carlos_juarez_Tienda {
                         System.out.println(" Volumen Total de Compras: " + volumenCompras + " Lps");
                         System.out.println(" Volumen Total de Ventas: " + volumenVentas + " Lps");
                         System.out.println(" Margen de Ganancia: " + margenGanancia + " Lps");
-                        System.out.println(" Valor Medio de Compra: " + (volumenCompras / numeroCompras) + " Lps");
+                        System.out.println(" Valor Medio de Compra: " + valorMedioCompra  + " Lps");
                         System.out.println(" Valor Medio de Venta: " + valorMedioVenta + " Lps");
                         System.out.println(" Venta con Mayor Ganancia: " + ventaMayorGanancia + " Lps");
                         System.out.println(" Compra con Mayor Gasto: " + compraMayorGasto + " Lps");
