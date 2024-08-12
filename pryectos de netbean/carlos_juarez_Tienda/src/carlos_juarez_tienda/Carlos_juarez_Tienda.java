@@ -34,6 +34,12 @@ public class Carlos_juarez_Tienda {
         String nombreProducto = "";
 
         String productoEstrella = "";
+        String productoPrimero = "";
+        double cantidadPrimero = 0;
+        String productoSegundo = "";
+        double cantidadSegundo = 0;
+        String productoTercero = "";
+        double cantidadTercero = 0;
 
         boolean cajaAbierta = false;
         String facturaDetalles = "";
@@ -470,6 +476,7 @@ public class Carlos_juarez_Tienda {
                                                     System.out.print("\nCuantos kilogramos de azucar desea comprar? ");
 
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgAzucarVendido=cantidadComprada;
                                                     if (cantidadComprada > kgAzucar || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidada de azucar,solo contamos con:" + kgAzucar + "de azucar");
                                                     } else {
@@ -490,6 +497,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Avena";
                                                     System.out.print("\nCuantos kilogramos de avena desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgAvenaVendido=cantidadComprada;
                                                     if (cantidadComprada > kgAvena || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgAvena + "de avena");
                                                     } else {
@@ -509,6 +517,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Trigo";
                                                     System.out.print("\nCuantos kilogramos de trigo desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgTrigoVendido=cantidadComprada;
                                                     if (cantidadComprada > kgTrigo || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgTrigo + "de trigo");
                                                     } else {
@@ -528,6 +537,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Maiz";
                                                     System.out.print("\nCuantos kilogramos de maiz desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgMaizVendido=cantidadComprada;
                                                     if (cantidadComprada > kgMaiz || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgMaiz + "de  maiz");
                                                     } else {
@@ -632,12 +642,14 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Azucar";
                                                     System.out.print("\nCuantos kilogramos de azucar desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgAzucarVendido=cantidadComprada;
                                                     if (cantidadComprada > kgAzucar || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgAzucar + "de azucar");
                                                     } else {
                                                         kgAzucar -= cantidadComprada;
                                                         precio = precioAzucar;
                                                         gananciasAzucar = (precioAzucar - precio1) * (int) cantidadComprada;
+                                                      
                                                         if (kgAzucar == 0) {
                                                             break;
                                                         }
@@ -651,6 +663,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Avena";
                                                     System.out.print("\nCuantos kilogramos de avena desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgAvenaVendido=cantidadComprada;
                                                     if (cantidadComprada > kgAvena || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgAvena + "de  avena");
                                                     } else {
@@ -670,6 +683,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Trigo";
                                                     System.out.print("\nCuantos kilogramos de trigo desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgTrigoVendido=cantidadComprada;
                                                     if (cantidadComprada > kgTrigo || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgTrigo + "de trigo");
                                                     } else {
@@ -738,7 +752,7 @@ public class Carlos_juarez_Tienda {
 
                                     // Sumar el total final a la caja
                                     dineroCaja += totalFinal;
-                                    System.out.println("El dinero en la caja después de la venta es: " + dineroCaja + " Lps");
+                                    System.out.println("El dinero en la caja despues de la venta es: " + dineroCaja + " Lps");
 
                                     break;
                                 case 3://cienteC
@@ -771,6 +785,7 @@ public class Carlos_juarez_Tienda {
                                                     nombreProducto = "Maiz";
                                                     System.out.print("\nCuantos kilogramos de maiz desea comprar? ");
                                                     cantidadComprada = lea.nextDouble();
+                                                    kgMaizVendido=cantidadComprada;
                                                     if (cantidadComprada > kgMaiz || cantidadComprada < 0) {
                                                         System.out.println("\nlo sentimos pero no tenemos suficiente cantidad de azucar,solo contamos con:" + kgMaiz + "de  maiz");
                                                     } else {
@@ -853,65 +868,122 @@ public class Carlos_juarez_Tienda {
 
                     case 4://reporte
                         if (dineroCaja <= 0 || cantidadkg <= 0) {
-                            System.out.println("Alert!,debe de iniciar caja primero y comprar productos");
+                            System.out.println("Alerta!,debe de iniciar caja primero y comprar productos");
                             break;
                         }
 
 // Actualiza datos para el producto específico
-                        kgAzucarVendido += cantidadComprada;
+                        
                         totalCaja += totalFinal;
                         margenGanancia += (totalFinal - subTotalDes); // Ejemplo de cálculo de margen de ganancia
 
 // Determina la venta con mayor ganancia
-                        
-                        if(gananciasAzucar>gananciasAvena){
-                            ventaMayorGanancia=gananciasAzucar;
-                        }else if(gananciasAvena>gananciasTrigo){
-                        ventaMayorGanancia=gananciasAvena; 
-                        }else if(gananciasTrigo>gananciasMaiz){
-                        ventaMayorGanancia=gananciasTrigo;
-                        }else{
-                        ventaMayorGanancia=gananciasMaiz;
+                        if (gananciasAzucar > gananciasAvena) {
+                            ventaMayorGanancia = gananciasAzucar;
+                        } else if (gananciasAvena > gananciasTrigo) {
+                            ventaMayorGanancia = gananciasAvena;
+                        } else if (gananciasTrigo > gananciasMaiz) {
+                            ventaMayorGanancia = gananciasTrigo;
+                        } else {
+                            ventaMayorGanancia = gananciasMaiz;
                         }
-                       
 
 // Determina el producto estrella
-                        if (kgAzucarVendido > cantidadProductoEstrella) {
-                            productoEstrella = nombreProducto;
-                            cantidadProductoEstrella = kgAzucarVendido;
+                        // Determinar el ranking
+                        if (kgAzucarVendido > cantidadPrimero) {
+                            // Desplaza el primer y segundo lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
+                            productoSegundo = productoPrimero;
+                            cantidadSegundo = cantidadPrimero;
+
+                            // Asigna el primer lugar
+                            productoPrimero = "Azucar";
+                            cantidadPrimero = kgAzucarVendido;
+                        } else if (kgAzucarVendido > cantidadSegundo) {
+                            // Desplaza el tercer lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
+
+                            // Asigna el segundo lugar
+                            productoSegundo = "Azucar";
+                            cantidadSegundo = kgAzucarVendido;
+                        } else if (kgAzucarVendido > cantidadTercero) {
+                            // Asigna el tercer lugar
+                            productoTercero = "Azucar";
+                            cantidadTercero = kgAzucarVendido;
                         }
 
-                        kgAvenaVendido += cantidadComprada;
-                        totalCaja += totalFinal;
-                        margenGanancia += (totalFinal - subTotalDes);
+                        if (kgAvenaVendido > cantidadPrimero) {
+                            // Desplaza el primer y segundo lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
+                            productoSegundo = productoPrimero;
+                            cantidadSegundo = cantidadPrimero;
 
-                        
+                            // Asigna el primer lugar
+                            productoPrimero = "Avena";
+                            cantidadPrimero = kgAvenaVendido;
+                        } else if (kgAvenaVendido > cantidadSegundo) {
+                            // Desplaza el tercer lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
 
-                        if (kgAvenaVendido > cantidadProductoEstrella) {
-                            productoEstrella = nombreProducto;
-                            cantidadProductoEstrella = kgAvenaVendido;
+                            // Asigna el segundo lugar
+                            productoSegundo = "Avena";
+                            cantidadSegundo = kgAvenaVendido;
+                        } else if (kgAvenaVendido > cantidadTercero) {
+                            // Asigna el tercer lugar
+                            productoTercero = "Avena";
+                            cantidadTercero = kgAvenaVendido;
                         }
 
-                        kgTrigoVendido += cantidadComprada;
-                        totalCaja += totalFinal;
-                        margenGanancia += (totalFinal - subTotalDes);
+                        if (kgTrigoVendido > cantidadPrimero) {
+                            // Desplaza el primer y segundo lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
+                            productoSegundo = productoPrimero;
+                            cantidadSegundo = cantidadPrimero;
 
-                      
+                            // Asigna el primer lugar
+                            productoPrimero = "Trigo";
+                            cantidadPrimero = kgTrigoVendido;
+                        } else if (kgTrigoVendido > cantidadSegundo) {
+                            // Desplaza el tercer lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
 
-                        if (kgTrigoVendido > cantidadProductoEstrella) {
-                            productoEstrella = nombreProducto;
-                            cantidadProductoEstrella = kgTrigoVendido;
+                            // Asigna el segundo lugar
+                            productoSegundo = "Trigo";
+                            cantidadSegundo = kgTrigoVendido;
+                        } else if (kgTrigoVendido > cantidadTercero) {
+                            // Asigna el tercer lugar
+                            productoTercero = "Trigo";
+                            cantidadTercero = kgTrigoVendido;
                         }
 
-                        kgMaizVendido += cantidadComprada;
-                        totalCaja += totalFinal;
-                        margenGanancia += (totalFinal - subTotalDes);
+                        if (kgMaizVendido > cantidadPrimero) {
+                            // Desplaza el primer y segundo lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
+                            productoSegundo = productoPrimero;
+                            cantidadSegundo = cantidadPrimero;
 
-                      
+                            // Asigna el primer lugar
+                            productoPrimero = "Maiz";
+                            cantidadPrimero = kgMaizVendido;
+                        } else if (kgMaizVendido > cantidadSegundo) {
+                            // Desplaza el tercer lugar
+                            productoTercero = productoSegundo;
+                            cantidadTercero = cantidadSegundo;
 
-                        if (kgMaizVendido > cantidadProductoEstrella) {
-                            productoEstrella = nombreProducto;
-                            cantidadProductoEstrella = kgMaizVendido;
+                            // Asigna el segundo lugar
+                            productoSegundo = "Maiz";
+                            cantidadSegundo = kgMaizVendido;
+                        } else if (kgMaizVendido > cantidadTercero) {
+                            // Asigna el tercer lugar
+                            productoTercero = "Maiz";
+                            cantidadTercero = kgMaizVendido;
                         }
 
 // Ejemplo de cálculo para valor medio
@@ -923,34 +995,35 @@ public class Carlos_juarez_Tienda {
                         System.out.println("*******************************************************");
                         System.out.println("\n*** Reporte del Día ***");
                         System.out.println("*******************************************************");
-                        System.out.println("*Cantidad Actual en Caja: " + totalCaja + " Lps");
+                        System.out.println("*Cantidad Actual en Caja: " + String.format("%.2f", totalCaja) + " Lps");
                         System.out.println("----------------------------------------------------");
-                        System.out.println("*Número de Compras: " + numeroCompras); // Número total de compras
+                        System.out.println("*Numero de Compras: " + numeroCompras); // Número total de compras
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Número de Ventas: " + numeroVentas); // Número total de ventas
+                        System.out.println(" *Numero de Ventas: " + numeroVentas); // Número total de ventas
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Volumen Total de Compras: " + volumenCompras + " Lps*");
+                        System.out.println(" *Volumen Total de Compras: " + String.format("%.2f", volumenCompras) + " Lps*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Volumen Total de Ventas: " + volumenVentas + " Lps*");
+                        System.out.println(" *Volumen Total de Ventas: " + String.format("%.2f", volumenVentas) + " Lps*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Margen de Ganancia: " + margenGanancia + " Lps*");
+                        System.out.println(" *Margen de Ganancia: " + String.format("%.2f", margenGanancia) + " Lps*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Valor Medio de Compra: " + valorMedioCompra + " Lps*");
+                        System.out.println(" *Valor Medio de Compra: " + String.format("%.2f", valorMedioCompra) + " Lps*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Valor Medio de Venta: " + valorMedioVenta + " Lps*");
+                        System.out.println(" *Valor Medio de Venta: " + String.format("%.2f", valorMedioVenta) + " Lps*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Venta con Mayor Ganancia: " + ventaMayorGanancia + " Lps*");
+                        System.out.println(" *Venta con Mayor Ganancia: " + String.format("%.2f", ventaMayorGanancia) + " Lps*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Producto Estrella: " + productoEstrella + " con " + cantidadProductoEstrella + " kg vendidos*");
+                        System.out.println(" *Producto Estrella: " + productoPrimero + " con " + cantidadPrimero + " kg vendidos*");
                         System.out.println("----------------------------------------------------");
-                        System.out.println(" *Ranking:");
-                        System.out.println("   1. " + productoEstrella + " con " + cantidadProductoEstrella + " kg*");
+                        System.out.println("   1. " + productoPrimero + " con " + cantidadPrimero + " kg");
+                        System.out.println("   2. " + productoSegundo + " con " + cantidadSegundo + " kg");
+                        System.out.println("   3. " + productoTercero + " con " + cantidadTercero + " kg");
                         System.out.println("*********************************************************");
                         break;
 
                     case 5: // Cierre de Caja
                         if (!cajaAbierta) {
-                            System.out.println("La caja ya está cerrada.");
+                            System.out.println("La caja ya esta cerrada.");
                         } else {
                             cajaAbierta = false;
                             System.out.println("Cierre de Caja:");
@@ -958,11 +1031,11 @@ public class Carlos_juarez_Tienda {
 
                             // Calcular depósito
                             double maxDeposito = dineroCaja * 0.60;
-                            System.out.println("¿Cuánto desea depositar en el banco? (Máximo: " + maxDeposito + " Lps)");
+                            System.out.println("¿Cuanto desea depositar en el banco? (Máximo: " + maxDeposito + " Lps)");
                             double deposito = lea.nextDouble();
 
                             if (deposito > maxDeposito) {
-                                System.out.println("No puede depositar más del 60%.");
+                                System.out.println("No puede depositar mas del 60%.");
                                 deposito = maxDeposito;
                             }
 
