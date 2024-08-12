@@ -895,7 +895,7 @@ public class Carlos_juarez_Tienda {
 
 // En la sección de reportes:
                         System.out.println("\n*** Reporte del Día ***");
-                        System.out.println(" Cantidad Actual en Caja: " + totalCaja + " Lps");
+                        System.out.println(" Cantidad Actual en Caja: " + dineroCaja+ " Lps");
                         System.out.println(" Número de Compras: " + numeroCompras);
                         System.out.println(" Número de Ventas: " + numeroVentas);
                         System.out.println(" Volumen Total de Compras: " + volumenCompras + " Lps");
