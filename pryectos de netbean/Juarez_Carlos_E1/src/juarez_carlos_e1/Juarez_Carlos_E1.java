@@ -146,11 +146,12 @@ public class Juarez_Carlos_E1 {
 
                 case 4:
 
-                    int contarvocales=0;
-                   
+                    int contarvocales = 0;
+
                     String palabras = "";
                     System.out.println("ingresaste a Caracteres vocales");
 
+                  
                     System.out.println("ingrese palabras:");
                     palabras = lea.next();
 
@@ -159,16 +160,13 @@ public class Juarez_Carlos_E1 {
                         char letra = palabras.charAt(i);
 
                         if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
-                            
+
                             contarvocales++;
-                           
+
                         }
-                        
-                     
-                       
+
                     }
-                   System.out.println("total de vocales: "+contarvocales);
-                    
+                    System.out.println("total de vocales: " + contarvocales);
 
                     break;
                 case 5:
