@@ -91,15 +91,17 @@ public class Juarez_Carlos_E1 {
                     String caja;
                     int HD = 30,
                      Normal = 20,
-                     valorcaja=0,
+                     valorcaja = 0,
                      subtotal = 0,
                      subtotalN = 0,
                      subtotalH = 0;
-                   
-                    double impuesto = 0.15, subtotalimpuesto=0;;
+
+                    double impuesto = 0.15,
+                     subtotalimpuesto = 0;
+                    ;
                     double totalPagar = 0;
-                    int contadorN=0;
-                    int contadorH=0;
+                    int contadorN = 0;
+                    int contadorH = 0;
 
                     System.out.println("ingrese su nombre profavor:");
                     nombre = lea.next();
@@ -107,43 +109,112 @@ public class Juarez_Carlos_E1 {
                         System.out.println("seleccione el tipo de canal que desee:\nHD\nNORMAL");
                         canal = lea.next().toLowerCase();
 
-                   if(canal.equalsIgnoreCase("hd")){
-                       contadorH++;
-                   }else if(canal.equalsIgnoreCase("normal")){
-                   contadorN++;
-                   }
+                        if (canal.equalsIgnoreCase("hd")) {
+                            contadorH++;
+                        } else if (canal.equalsIgnoreCase("normal")) {
+                            contadorN++;
+                        }
                         System.out.println("desea ingresar a otro canal:(SI/NO)");
                         decicion = lea.next().toLowerCase();
                     } while (decicion.equalsIgnoreCase("si"));
 
                     System.out.println("ingrese tipo de caja:\nLightbox\nHDbox\nDVRbox\nIngrese:");
                     caja = lea.next().toLowerCase();
-                    
-                    if(caja.equalsIgnoreCase("lightbox")){
-                    valorcaja=50;
-                    }else if(caja.equalsIgnoreCase("hdbox")){
-                    valorcaja=100;
-                    }else if(caja.equalsIgnoreCase("dvrbox")){
-                    valorcaja=150;
+
+                    if (caja.equalsIgnoreCase("lightbox")) {
+                        valorcaja = 50;
+                    } else if (caja.equalsIgnoreCase("hdbox")) {
+                        valorcaja = 100;
+                    } else if (caja.equalsIgnoreCase("dvrbox")) {
+                        valorcaja = 150;
                     }
-                   
+
                     System.out.println("\nFactura");
                     System.out.println("Nombre del cliente: " + nombre);
                     System.out.println("canales NORMALES agregados:" + contadorN);
                     System.out.println("canales HD agregados:" + contadorH);
                     subtotalN = contadorN * Normal;
-                    subtotalH=contadorH*HD;
-                    subtotal=subtotalN+subtotalH+valorcaja;
-                    System.out.println("el subtotal es:"+subtotal);
-                    subtotalimpuesto=subtotal*impuesto;
+                    subtotalH = contadorH * HD;
+                    subtotal = subtotalN + subtotalH + valorcaja;
+                    System.out.println("el subtotal es:" + subtotal);
+                    subtotalimpuesto = subtotal * impuesto;
                     System.out.println("impuesto de 15%");
                     System.out.println("--------------------------------");
-                    System.out.println("total a pagar:"+subtotalimpuesto);
-                    
+                    System.out.println("total a pagar:" + subtotalimpuesto);
+
                     break;
 
                 case 4:
+
+                    int contarvocales=0;
+                    int contarvocalA=0;
+                    int contarvocalE=0;
+                    int contarvocalI=0;
+                    int contarvocalO=0;
+                    int contarvocalU=0;
+                    String palabras = "";
                     System.out.println("ingresaste a Caracteres vocales");
+
+                    System.out.println("ingrese palabras:");
+                    palabras = lea.next();
+
+                    System.out.println("contar las vocales");
+                    for (int i = 0; i < palabras.length(); i++) {
+                        char letra = palabras.charAt(i);
+
+                        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                            contarvocales++;
+                           
+                        }
+                       System.out.println("total de vocales: "+contarvocales);
+                     
+                        System.out.println("te gustaria saber cuantas 'a','e','i','o','u' se encuentran en la palabra:\n1=si\n2=no");
+                       int sino=lea.nextInt();
+                       if(sino==1){
+                           System.out.println("de cual variable deseas ver la cantidad:\n1=a\n2=e\n3=i\n4=o\n5=u");
+                      int elegirvocal=lea.nextInt();
+                           
+                      switch(letra){
+                            case 1:
+                                if(letra=='a'){
+                                contarvocalA++;
+                                }
+                                System.out.println("cantidad de vocales a :"+contarvocalA);
+                        break;
+                            case 2:
+                                if(letra=='e'){
+                                contarvocalE++;
+                                }
+                                System.out.println("cantidad de vocales e :"+contarvocalE);
+                                break;
+                            case 3:
+                                if(letra=='i'){
+                                contarvocalI++;
+                                }
+                                System.out.println("cantidad de vocales i :"+contarvocalI);
+                           break;
+                            case 4:
+                                if(letra=='0'){
+                                contarvocalO++;
+                                }
+                                System.out.println("cantidad de vocales o :"+contarvocalO);
+                                break;
+                            case 5:
+                                if(letra=='u'){
+                                contarvocalU++;
+                                }
+                                System.out.println("cantidad de vocales u :"+contarvocalU);
+                                break;
+                            default:
+                                System.out.println("ingrese opcion correcta");
+                                
+                           }
+                       }else if (sino==2){
+                       break;
+                       }
+                    }
+                    
+                    
 
                     break;
                 case 5:
