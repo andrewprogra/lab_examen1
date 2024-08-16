@@ -91,9 +91,7 @@ public class Juarez_Carlos_E1 {
                     String caja;
                     int HD = 30,
                      Normal = 20,
-                     Lightbox = 50,
-                     HDbox = 100,
-                     DVRbox = 150,
+                     valorcaja=0,
                      subtotal = 0,
                      subtotalN = 0,
                      subtotalH = 0;
@@ -120,14 +118,22 @@ public class Juarez_Carlos_E1 {
 
                     System.out.println("ingrese tipo de caja:\nLightbox\nHDbox\nDVRbox\nIngrese:");
                     caja = lea.next().toLowerCase();
+                    
+                    if(caja.equalsIgnoreCase("lightbox")){
+                    valorcaja=50;
+                    }else if(caja.equalsIgnoreCase("hdbox")){
+                    valorcaja=100;
+                    }else if(caja.equalsIgnoreCase("dvrbox")){
+                    valorcaja=150;
+                    }
                    
                     System.out.println("\nFactura");
-                    System.out.println("Nombre del cliente:" + nombre);
+                    System.out.println("Nombre del cliente: " + nombre);
                     System.out.println("canales NORMALES agregados:" + contadorN);
                     System.out.println("canales HD agregados:" + contadorH);
                     subtotalN = contadorN * Normal;
                     subtotalH=contadorH*HD;
-                    subtotal=subtotalN+subtotalH;
+                    subtotal=subtotalN+subtotalH+valorcaja;
                     System.out.println("el subtotal es:"+subtotal);
                     subtotalimpuesto=subtotal*impuesto;
                     System.out.println("impuesto de 15%");
