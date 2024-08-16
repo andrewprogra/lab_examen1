@@ -147,11 +147,7 @@ public class Juarez_Carlos_E1 {
                 case 4:
 
                     int contarvocales=0;
-                    int contarvocalA=0;
-                    int contarvocalE=0;
-                    int contarvocalI=0;
-                    int contarvocalO=0;
-                    int contarvocalU=0;
+                   
                     String palabras = "";
                     System.out.println("ingresaste a Caracteres vocales");
 
@@ -163,57 +159,15 @@ public class Juarez_Carlos_E1 {
                         char letra = palabras.charAt(i);
 
                         if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                            
                             contarvocales++;
                            
                         }
-                       System.out.println("total de vocales: "+contarvocales);
+                        
                      
-                        System.out.println("te gustaria saber cuantas 'a','e','i','o','u' se encuentran en la palabra:\n1=si\n2=no");
-                       int sino=lea.nextInt();
-                       if(sino==1){
-                           System.out.println("de cual variable deseas ver la cantidad:\n1=a\n2=e\n3=i\n4=o\n5=u");
-                      int elegirvocal=lea.nextInt();
-                           
-                      switch(letra){
-                            case 1:
-                                if(letra=='a'){
-                                contarvocalA++;
-                                }
-                                System.out.println("cantidad de vocales a :"+contarvocalA);
-                        break;
-                            case 2:
-                                if(letra=='e'){
-                                contarvocalE++;
-                                }
-                                System.out.println("cantidad de vocales e :"+contarvocalE);
-                                break;
-                            case 3:
-                                if(letra=='i'){
-                                contarvocalI++;
-                                }
-                                System.out.println("cantidad de vocales i :"+contarvocalI);
-                           break;
-                            case 4:
-                                if(letra=='0'){
-                                contarvocalO++;
-                                }
-                                System.out.println("cantidad de vocales o :"+contarvocalO);
-                                break;
-                            case 5:
-                                if(letra=='u'){
-                                contarvocalU++;
-                                }
-                                System.out.println("cantidad de vocales u :"+contarvocalU);
-                                break;
-                            default:
-                                System.out.println("ingrese opcion correcta");
-                                
-                           }
-                       }else if (sino==2){
-                       break;
-                       }
+                       
                     }
-                    
+                   System.out.println("total de vocales: "+contarvocales);
                     
 
                     break;
