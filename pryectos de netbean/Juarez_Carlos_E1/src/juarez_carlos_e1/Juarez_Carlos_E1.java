@@ -146,28 +146,32 @@ public class Juarez_Carlos_E1 {
 
                 case 4:
 
-                    int contarvocales = 0;
-
+                    int contarVocales = 0;
                     String palabras = "";
-                    System.out.println("ingresaste a Caracteres vocales");
 
-                  
-                    System.out.println("ingrese palabras:");
+                    System.out.println("Ingresaste a Caracteres vocales");
+                    System.out.println("Ingresa palabras:");
                     palabras = lea.next();
 
-                    System.out.println("contar las vocales");
+                    System.out.println("Contar las vocales");
                     for (int i = 0; i < palabras.length(); i++) {
                         char letra = palabras.charAt(i);
 
-                        if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+                        switch (letra) {
+                            case 'a':
+                            case 'e':
+                            case 'i':
+                            case 'o':
+                            case 'u':
+                                contarVocales++;
+                                break;
+                            default:
 
-                            contarvocales++;
-
+                                break;
                         }
-
                     }
-                    System.out.println("total de vocales: " + contarvocales);
 
+                    System.out.println("Total de vocales: " + contarVocales);
                     break;
                 case 5:
                     System.out.println("Hasta luego");
